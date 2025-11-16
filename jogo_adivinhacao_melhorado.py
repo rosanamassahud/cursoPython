@@ -1,3 +1,6 @@
+import random
+import time
+
 def apres_adivinhacao():
     print('------------------------------------------------')
     print('------- Bem vindo ao jogo de adivinhação -------')
@@ -9,7 +12,9 @@ def imprime_pontos(jogador, pontos):
     print('------------------------------------------------')
 
 def gera_numero_secreto():
-    numero_secreto = 45
+    random.seed(time.time())
+    numero_secreto = random.randint(0, 100)
+    #print(numero_secreto)
     return numero_secreto
 
 def define_nivel():
@@ -38,8 +43,8 @@ def menu():
     print()
     print('1-Jogar')
     print('0-Sair do programa')
-    opcao = int(input('O que deseja fazer agora? '))
-    return opcao
+    op = int(input('O que deseja fazer agora? '))
+    return op
 
 def jogar(jogador):
     numero_secreto, numero_tentativas = configura_jogo()
@@ -56,7 +61,7 @@ def jogar(jogador):
             break
         else:
             print('Você errou!')    
-            pontos = pontos - (float)((abs(numero_secreto-chute))/2)
+            pontos = pontos - float((abs(numero_secreto-chute))/2)
             if (chute > numero_secreto):
                 print('Você chutou um número MAIOR que o número secreto')
             elif (chute < numero_secreto):
