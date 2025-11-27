@@ -1,0 +1,47 @@
+Para criar o ambiente de desenvolvimento.
+Crie um pasta (diretório) que será o seu projeto.
+
+Com o Python instalado e configurado (vide vídeo no YouTube), 
+digite no terminal de comandos do VSCode ou no prompt.
+Direcione o prompt para a pasta raiz do seu projeto.
+Digite:
+1- Para criar o ambiente virtual:
+
+python -m venv venv
+
+2- Para ativar o venv:
+
+.\venv\Scripts\activate
+
+3- Atualize o pip:
+
+python -m pip install --upgrade pip
+
+4- Instale os pacotes que vai precisar no seu projeto, 
+por exemplo, suponha que vamos precisar do pygame (exemplo
+do joguinho do minecraft) e do pyinstaller (para gerarmos o
+executável), então:
+
+python -m pip install pygame
+python -m pip install pyinstaller
+
+5- Para interpretar e rodar o programa. Exemplo: suponha que
+vou rodar o programa que está na salvo como
+jogo_mine_craft.py
+
+python jogo_mine_craft.py
+
+Comandos do pyinstaller para gerar o executável:
+
+Importante! Para gerar o executável de um projeto,
+o pyinstaller precisa estar instalado no venv e o venv deve
+estar ativado
+
+Suponha que vou gerar o executável do joguinho do minecraft:
+
+pyinstaller -F -w jogo_mine_craft.py
+
+Ao executar o comando acima, se tudo correu bem, vai aparecer
+uma pasta \dist no seu diretório raiz. Dentro desta pasta 
+estará o seu arquivo executável do projeto.
+
